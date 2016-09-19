@@ -1,0 +1,32 @@
+<%= javascript_include_tag "angular.js" %>
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "angular-app/app.js" %>
+<%= javascript_include_tag "angular-app/controllers/gameCtrl.js" %>
+<%= stylesheet_link_tag "game.css" %>
+
+<div id="ngBoard" ng-app="battleship" ng-controller="GameCtrl">
+    <input type="hidden" value="{{ player = <%= @own_id %> }}" />
+    
+    <!-- {{ player }} {{ board }} -->
+<!--     Player 1 ships:
+    <div ng-repeat="ship in ships[1]">{{ ship.name }} - {{ ship.coordinates }}</div>
+    <hr/>
+    Player 2 ships:
+    <div ng-repeat="ship in ships[2]">{{ ship.name }} - {{ ship.coordinates }}</div> -->
+
+    <div class="header">Welcome <%= @current_user.name %></div>
+    <div ng-class="{ 'turn-header-wait': randomisable, 'turn-header': (playerTurn ==  <%= @own_id %> && !randomisable), 'no-turn-header': (playerTurn ==  <%= @rival_id %> && !randomisable) }" >
+        <div id="turn-owner">{{ turnStatus }} - Player's turn is: {{ playerTurn }} </div>
+        <div id="turn-number">Turn Number: {{ turnNumber }}</div>
+        <div id="turn-message">Message: {{ message }}</div>
+        <div id="turn-logout"><%= link_to 'Logout', session_path, method: :delete %></div>
+    </div>
+    <div class="boards">
+        <%= render partial: "board" %>
+    </div>
+    <div class="chat">      
+    </div>
+    <div class="turns">
+         <%= render partial: "turns" %>
+    </div>
+</div> 

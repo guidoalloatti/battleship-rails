@@ -1,0 +1,10 @@
+<h1>Turns</h1>
+
+<div id="turns">
+    <div ng-repeat="shoot in allShoots" class="turn">
+        Turn: <strong>{{ shoot.turn }}</strong>
+        the player <strong>{{ shoot.player }}</strong> 
+        was shooted to <strong>{{ shoot.coordinates }}</strong> 
+        and <strong>{{ shoot.content }}</strong> was hit.
+    </div>
+</div>

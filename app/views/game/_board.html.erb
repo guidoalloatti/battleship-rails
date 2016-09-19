@@ -1,0 +1,49 @@
+<div class="player-<%= @own_id %>-board">
+    <h3>Your board - (<%= @own_player %> Board)</h3>
+    <table>
+        <tr>
+            <th class="td-header"></th>
+            <% for i in 1..10 do %>
+                <th class="td-header"><%= i %></th>
+            <% end %>
+        </tr>
+
+        <% for letter in ("A".."J").to_a %>
+            <tr>
+                <td class="td-header"><%= letter %></td>
+                <% for i in 1..10 do %>
+                    <td id="board_<%= @own_id %>_player_<%= @own_id %>-<%= letter %>-<%= i %>"></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+    <div class="buttons-controls">
+        <div class="randomize-button">
+            <input type="button" value="Randomize Ships" ng-click="randomizeShips('<%= @own_id %>')" ng-disabled="!randomisable" />
+        </div>
+        <div class="start-game-button">
+            <input type="button" value="{{ gameLabel }}" ng-click="startGame('<%= @own_id %>')" ng-disabled="!startable" />
+        </div>
+    </div>
+</div>
+
+<div class="player-<%= @rival_id %>-board">
+    <h3>Your enemy board - (<%= @rival_player %> Board)</h3>
+    <table>
+        <tr>
+            <th class="td-header"></th>
+            <% for i in 1..10 do %>
+                <th class="td-header"><%= i %></th>
+            <% end %>
+        </tr>
+
+        <% for letter in ("A".."J").to_a %>
+            <tr>
+                <td class="td-header"><%= letter %></td>
+                <% for i in 1..10 do %>
+                    <td ng-click="shootTo('<%= letter %>-<%= i %>')" id="board_<%= @own_id %>_player_<%= @rival_id %>-<%= letter %>-<%= i %>"></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+</div>

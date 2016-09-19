@@ -1,0 +1,11 @@
+<h1>Battleship</h1>
+
+<p>
+  <h3>Hello <%= @current_user.name %>!</h3>
+  You are already logged in, from here you can:
+</p>
+
+<ul>
+  <li><%= link_to 'Go to the game', 'player/1' %></li>
+  <li><%= link_to 'Logout', session_path, method: :delete %></li>
+</ul>

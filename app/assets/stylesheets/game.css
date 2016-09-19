@@ -1,0 +1,153 @@
+th, td {
+    width: 35px;
+    height: 35px;
+    border: 1px solid lightblue;
+    text-align: center;
+    color: #606060;
+}
+
+table {
+  border-spacing:0;
+  border-collapse: collapse;
+}
+
+body {
+    margin: 0;
+}
+
+.td-header {
+    background-color: #ededed;
+    border: 1px solid gray;
+}
+
+.td-board {
+    border: 1px solid gray;
+}
+
+.player-1-board {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.player-2-board {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.buttons-controls {
+    margin-top: 20px;
+    display: inline-block;
+    position: absolute;
+}
+
+.randomize-button {
+    display: inline-block;
+    /*position: absolute;*/
+}
+
+.start-game-button {
+    /*margin-left: 20px;*/
+    display: inline-block;
+    /*position: absolute;*/
+}
+
+.my-ship-cell {
+    border: 1px solid #8bc34a;
+    background-color: #cfffcf;
+}
+
+.enemy-ship-cell {
+    border: 1px solid #ee8a8a;
+    background-color: #f4cbcb;
+}
+
+.water-cell {
+    border: 1px solid #91bdff;
+    background-color: #b4d2ff;
+}
+
+.touched-cell {
+    border: 1px solid #fff707;
+    background-color: #fff707;
+}
+
+.header {
+    font-size: 32px;
+    font-weight: 500;
+    /*width: 90%;*/
+    color: white;
+    background-color: gray;
+    padding: 15px 45px;
+    margin: 0;
+}
+
+.turn-header {
+    font-size: 24px;
+    font-weight: 1000;
+    color: white;
+    background-color: #59be59;
+    padding: 10px 100px;
+    margin: 0;
+}
+
+.turn-header-wait {
+    font-size: 24px;
+    font-weight: 1000;
+    color: white;
+    background-color: #bcbcbc;
+    padding: 10px 100px;
+    margin: 0;
+}
+
+.no-turn-header {
+    font-size: 24px;
+    font-weight: 1000;
+    color: white;
+    background-color: #f9a5a5;
+    padding: 10px 100px;
+    margin: 0;
+}
+
+.boards {
+    margin: 20px;
+    background-color: white;
+}
+
+.chat {
+    position: absolute;
+    left: 1150px;
+    top: 120px;
+}
+
+#turn-number {
+    padding-left: 50px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+#turn-message {
+    color: white;
+    padding-left: 50px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+#turn-logout {
+    padding-left: 500px;
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    /*float: right;*/
+}
+
+#turn-owner {
+    display: inline-block;
+}
+
+.turns {
+    padding: 10px;
+    border: 1px solid lightblue;
+    margin-left: 75px;
+    margin-top: 75px;
+    width: 400px;
+}

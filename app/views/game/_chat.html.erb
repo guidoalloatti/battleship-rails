@@ -1,0 +1,11 @@
+<h1>Messages</h1>
+
+<% @messages.each do |message| %>
+    <% message.comments.each do |comment| %>
+        <strong>Player <%= comment.user.id %> says:</strong>
+        <%= comment.content %>
+        <br>
+    <% end %>  
+<% end %>
+
+
