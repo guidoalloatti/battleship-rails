@@ -1,6 +1,6 @@
-# Action Cable Examples
+# Battleship Game on rails 5 using Action Cable and Angular
 
-A collection of examples showcasing the capabilities of Action Cable.
+A fully playable version of the famous Battleship Game.
 
 ## Dependencies
 
@@ -31,7 +31,5 @@ You must have redis installed and running on the default port:6379 (or configure
 
 1. Open two browsers with separate cookie spaces (like a regular session and an incognito session). 
 2. Login as different people in each browser. 
-3. Go to the same message.
-4. Add comments in either browser and see them appear real-time on the counterpart screen.
-
-![Live comments example](/example.gif?raw=true "Live comments example")
+3. Go to the game.
+4. Start playing!
