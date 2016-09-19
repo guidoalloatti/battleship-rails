@@ -2,18 +2,18 @@ App.game = App.cable.subscriptions.create "GameChannel",
 
   connected: ->
     # Called when the subscription is ready for use on the server
-    console.log("Ready to use server")
+    # console.log("Ready to use server")
     (->@)().allShoots = []
     (->@)().shoots = [[], [], []]
     (->@)().ships = [[], [], []]
  
   disconnected: ->
     # Called when the subscription has been terminated by hootingver
-    console.log("Disconnected from use server")
+    # console.log("Disconnected from use server")
  
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    console.log "Receiving data from channel!"
+    # console.log "Receiving data from channel!"
 
     if typeof(data.turn) != 'undefined'
       sender = data['turn']['sender']
