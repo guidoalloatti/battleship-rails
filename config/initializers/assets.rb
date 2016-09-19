@@ -12,5 +12,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( angular.js )
 Rails.application.config.assets.precompile += %w( jquery.min.js )
 Rails.application.config.assets.precompile += %w( angular-app/app.js )
-Rails.application.config.assets.precompile += %w( angular-app/controllers/gameCtrl.js )
 Rails.application.config.assets.precompile += %w( game.css )
+Rails.application.config.assets.precompile += %w( angular-app/controllers/gameCtrl.js )

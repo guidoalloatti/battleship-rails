@@ -1,4 +1,4 @@
-
+// This method is called from the channel when shooting a ship
 var processRivalShoot = function(board, player, coordinates, content) {
     var scope = angular.element(document.getElementById('ngBoard')).scope();
     scope.checkShoot(board, player, coordinates, content);
@@ -8,12 +8,14 @@ var processRivalShoot = function(board, player, coordinates, content) {
     scope.$apply();
 }
 
+// This method is called from the channel when the player's ships have being set
 var processRivalShips = function(board, player, ships) {
     var scope = angular.element(document.getElementById('ngBoard')).scope();
     scope.assignEnemyShips(player);
     scope.$apply();
 }
 
+var app = angular.module("battleship", []); 
 app.controller("GameCtrl", function($scope) {
     
     $scope.possibleLetters = "ABCDEFGHIJ";
@@ -60,7 +62,6 @@ app.controller("GameCtrl", function($scope) {
         return Math.floor(Math.random()*(10-1+1)+1);
     }
 
-
     $scope.checkAvailableCoordinates = function(player, coordinates) {
         var valid_coordinates = true;
         angular.forEach($scope.usedCells[player], function(cell){
@@ -73,9 +74,6 @@ app.controller("GameCtrl", function($scope) {
             var previous_letter = $scope.indexLetters[$scope.lettersIndex[letter]-1];
             var next_number = parseInt(parseInt(number)+1);
             var previous_number = parseInt(parseInt(number)-1);
-
-            // console.log("===== checkAvailableCoordinates =====");
-            // console.log(cell, coordinates, "[", letter, next_letter, previous_letter, "]", "[", number, next_number, previous_number, "]");
 
             if (coordinates == letter+"-"+number ||                  // Letter, number => center
                 coordinates == letter+"-"+next_number ||             // Number plus one => left
@@ -141,7 +139,6 @@ app.controller("GameCtrl", function($scope) {
     }
 
     $scope.getShipCoordinates = function(size, player) {
-        // console.log(size, player);
         var coordinates = [];
         var original_coordinates = $scope.generateRandomCoordinates();
         var ship_direction = $scope.getShipDirection(size, original_coordinates);
@@ -189,7 +186,6 @@ app.controller("GameCtrl", function($scope) {
     }
 
     $scope.generateShipsArray = function(player) {
-        // console.log(player + " -> setting ships");
         return [
             { name: "Carrier", size: "5", coordinates:    $scope.getShipCoordinates(5, player) },
             { name: "Battleship", size: "4", coordinates: $scope.getShipCoordinates(4, player) },

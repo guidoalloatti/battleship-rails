@@ -16,7 +16,6 @@ App.game = App.cable.subscriptions.create "GameChannel",
     console.log "Receiving data from channel!"
 
     if typeof(data.turn) != 'undefined'
-      console.log data['turn']
       sender = data['turn']['sender']
       player = data['turn']['player']
       coordinates = data['turn']['coordinates']

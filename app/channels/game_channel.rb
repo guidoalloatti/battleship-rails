@@ -16,12 +16,6 @@ class GameChannel < ApplicationCable::Channel
 
   def ships(data)
     puts "Calling to ships from game channel"
-    # puts "======== 1 ========="
-    # puts data
-    # puts "======== 2 ========="
-    # puts data['ships']
-    # puts "======== 3 ========="
-    # puts data['ships']['ships']
     ActionCable.server.broadcast 'game_channel', ships: data['ships']
   end
 end

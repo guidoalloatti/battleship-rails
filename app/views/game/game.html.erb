@@ -1,8 +1,8 @@
 <%= javascript_include_tag "angular.js" %>
 <%= javascript_include_tag "jquery.min.js" %>
 <%= javascript_include_tag "angular-app/app.js" %>
-<%= javascript_include_tag "angular-app/controllers/gameCtrl.js" %>
 <%= stylesheet_link_tag "game.css" %>
+<%= javascript_include_tag "angular-app/controllers/gameCtrl.js" %>
 
 <div id="ngBoard" ng-app="battleship" ng-controller="GameCtrl">
     <input type="hidden" value="{{ player = <%= @own_id %> }}" />
