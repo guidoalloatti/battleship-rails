@@ -27,9 +27,10 @@ You must have redis installed and running on the default port:6379 (or configure
 4. One more terminal to run redis server: `redis-server`
 4. Visit `http://localhost:3000`
 
-## Live comments example
+## Play Battleship Game
 
 1. Open two browsers with separate cookie spaces (like a regular session and an incognito session). 
 2. Login as different people in each browser. 
 3. Go to the game.
-4. Start playing!
+4. Choose the best ships formation.
+5. Start playing!
